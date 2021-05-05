@@ -4,15 +4,20 @@
  */
 package controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import applications.Main;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import models.ClientModel;
 
@@ -21,6 +26,7 @@ public class ClientController implements Initializable  {
 	
 	@FXML private Button btnDescribe;
 	@FXML private Button btnProblemList;
+	@FXML private Button btnLogout;
 	
 	@FXML private Group groupDescribe;
 	@FXML private TextField txtDesc;
@@ -54,6 +60,20 @@ public class ClientController implements Initializable  {
      	groupDescribe.setVisible(false);
      	groupProblemList.setVisible(true);
     }
+    
+    //btnLogout click event
+    public void	OnBtnLogoutClicked() {
+    	AnchorPane root = null;
+		try {
+			root = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/LoginView.fxml"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Scene scene 	= new Scene(root);
+		Main.stage.setTitle("Login View");
+		Main.stage.setScene(scene);
+	}
     
     //btnSubmit click event
     public void OnBtnSubmitClicked() {

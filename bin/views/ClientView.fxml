@@ -13,6 +13,7 @@
    <children>
       <Button fx:id="btnDescribe" layoutX="161.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnBtnDescribeClicked" text="Describe Problem" />
       <Button fx:id="btnProblemList" layoutX="329.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnBtnProblemListClicked" text="Problem List" />
+      <Button fx:id="btnLogout" layoutX="517.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnBtnLogoutClicked" text="Logout" />
       <Group fx:id="groupDescribe" layoutX="6.0" layoutY="77.0">
          <children>
             <TextField fx:id="txtDesc" alignment="TOP_LEFT" layoutX="67.0" layoutY="23.0" prefHeight="216.0" prefWidth="426.0" />
@@ -23,7 +24,7 @@
       </Group>
       <Group fx:id="groupProblemList">
          <children>
-            <TableView fx:id="tableList" editable="true" layoutX="12.0" layoutY="74.0" prefHeight="238.0" prefWidth="575.0" tableMenuButtonVisible="true">
+            <TableView fx:id="tableList" editable="true" layoutX="12.0" layoutY="74.0" prefHeight="238.0" prefWidth="575.0">
               <columns>
                 <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="colProblem" prefWidth="75.0" text="Problem" />

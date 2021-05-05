@@ -31,5 +31,4 @@ public class Main extends Application {
 			System.out.println("Error occured while inflating view: " + e);
 		}
 	}
-
 }

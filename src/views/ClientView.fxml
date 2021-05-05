@@ -13,6 +13,7 @@
    <children>
       <Button fx:id="btnDescribe" layoutX="161.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnBtnDescribeClicked" text="Describe Problem" />
       <Button fx:id="btnProblemList" layoutX="329.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnBtnProblemListClicked" text="Problem List" />
+      <Button fx:id="btnLogout" layoutX="517.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnBtnLogoutClicked" text="Logout" />
       <Group fx:id="groupDescribe" layoutX="6.0" layoutY="77.0">
          <children>
             <TextField fx:id="txtDesc" alignment="TOP_LEFT" layoutX="67.0" layoutY="23.0" prefHeight="216.0" prefWidth="426.0" />
