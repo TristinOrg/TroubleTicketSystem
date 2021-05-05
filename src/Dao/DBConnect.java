@@ -2,7 +2,7 @@
  * author 	: Tristin Wen
  * date 	: 2021/05/05
  */
-package models;
+package Dao;
 import java.sql.Connection;
 import java.sql.DriverManager; 
 import java.sql.SQLException;
@@ -14,6 +14,11 @@ public class DBConnect
 	// Database credentials
 	static final String USER 	= "fp510", PASS = "510";
 
+	protected Connection connection;
+	public Connection getConnection() {
+		return connection;
+	}
+	
 	public Connection connect() throws SQLException 
 	{
 		return DriverManager.getConnection(DB_URL, USER, PASS);
