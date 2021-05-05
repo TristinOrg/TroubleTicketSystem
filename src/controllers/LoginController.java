@@ -68,7 +68,7 @@ public class LoginController {
 
 					root = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/ClientView.fxml"));
 					// ***Set user ID acquired from db****
-					int user_id = model.getId();  
+					int user_id = model.GetId();  
 					ClientController.setUserid(user_id);
 					Main.stage.setTitle("Client View");
 				}

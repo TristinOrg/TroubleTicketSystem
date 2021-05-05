@@ -12,33 +12,39 @@ import Dao.DBConnect;
 
 public class LoginModel extends DBConnect {
 	
-	private Boolean admin;
-	private int id;
- 
-	public int getId() {
-		return id;
+	private User user;
+	public LoginModel() {
+		user = new User();
 	}
-	public void setId(int id) {
-		this.id = id;
+	
+	public int GetId(){
+		if(user == null) 
+		{
+			return -1;	
+		}		
+		return user.GetId();
 	}
-	public Boolean isAdmin() {
-		return admin;
+	
+	public boolean isAdmin()
+	{
+		if (user==null) {
+			return false;
+		}
+		return user.GetIsAdmin();
 	}
-	public void setAdmin(Boolean admin) {
-		this.admin = admin;
-	}
+
 		
 	public Boolean getCredentials(String username, String password){
            
         	String query = "SELECT * FROM t_wen_users WHERE uname = ? and passwd = ?;";
-            try(PreparedStatement stmt = connection.prepareStatement(query)) {
+            try(PreparedStatement stmt = connect().prepareStatement(query)) {
                stmt.setString(1, username);
                stmt.setString(2, password);
                ResultSet rs = stmt.executeQuery();
                 if(rs.next()) { 
                  
-                	setId(rs.getInt("id"));
-                	setAdmin(rs.getBoolean("admin"));
+                	user.SetId(rs.getInt("id"));
+                	user.SetIsAdmin(rs.getBoolean("admin"));
                 	return true;
                	}
              }catch (SQLException e) {

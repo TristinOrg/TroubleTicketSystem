@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import models.ClientModel;
+import models.Problem;
 
 public class ClientController implements Initializable  {
 	static int userid;
@@ -34,7 +35,7 @@ public class ClientController implements Initializable  {
 	@FXML private Text txtErrorMsg;
 	
 	@FXML private Group groupProblemList;
-	@FXML private TableView<ClientModel> tableLis;
+	@FXML private TableView<Problem> tableLis;
 	  
 	public static void setUserid(int user_id) {
 		userid = user_id;
