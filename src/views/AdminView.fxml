@@ -16,9 +16,9 @@
       <Button fx:id="btnUpdateAccount" layoutX="319.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnUpdateAccountClicked" text="Update Account" />
       <Button fx:id="btnViewProblems" layoutX="189.0" layoutY="72.0" mnemonicParsing="false" onAction="#OnBtnViewProblemsClicked" text="View Problems" />
       <Button fx:id="btnUpdateProblem" layoutX="319.0" layoutY="72.0" mnemonicParsing="false" onAction="#OnBtnUpdateProblemClicked" text="Update Problem" />
-      <Group fx:id="groupViewAccounts" disable="true" layoutX="74.0" layoutY="127.0">
+      <Group fx:id="groupViewAccounts" layoutX="74.0" layoutY="127.0">
          <children>
-            <TableView fx:id="tableViewAccount" prefHeight="200.0" prefWidth="465.0">
+            <TableView fx:id="tableViewAccount" editable="true" prefHeight="200.0" prefWidth="465.0">
               <columns>
                 <TableColumn fx:id="colAccountID" prefWidth="145.0" text="ID" />
                 <TableColumn fx:id="colAccountPassword" minWidth="0.0" prefWidth="167.0" text="Password" />
@@ -27,21 +27,21 @@
             </TableView>
          </children>
       </Group>
-      <Group fx:id="groupUpdateAccounts" disable="true" layoutX="171.0" layoutY="135.0">
+      <Group fx:id="groupUpdateAccounts" layoutX="171.0" layoutY="135.0">
          <children>
             <TextField fx:id="txtAccountID" layoutX="67.0" />
-            <Text layoutX="28.0" layoutY="3.8125" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
+            <Text layoutX="28.0" layoutY="12.8" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
             <TextField fx:id="txtAccountPassword" layoutX="67.0" layoutY="42.0" />
-            <Text layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" textAlignment="RIGHT" />
+            <Text layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" textAlignment="RIGHT" />
             <CheckBox fx:id="checkAccountIsAdmin" layoutX="67.0" layoutY="70.0" mnemonicParsing="false" text="Is Admin" />
             <CheckBox fx:id="checkAccountIsAdd" layoutX="67.0" layoutY="90.0" mnemonicParsing="false" text="Is Add" />
             <CheckBox fx:id="checkAccountIsDelete" layoutX="66.0" layoutY="114.0" mnemonicParsing="false" text="Is Delete" />
-            <Button fx:id="btnAccountUpdate" layoutX="102.0" layoutY="147.0" mnemonicParsing="false" onAction="#OnBtnProblemUpdateClicked" text="Update" />
+            <Button fx:id="btnAccountUpdate" layoutX="102.0" layoutY="147.0" mnemonicParsing="false" onAction="#OnBtnAccountUpdateClicked" text="Update" />
          </children>
       </Group>
-      <Group fx:id="groupViewProblems" disable="true" layoutX="74.0" layoutY="128.0">
+      <Group fx:id="groupViewProblems" layoutX="74.0" layoutY="128.0">
          <children>
-            <TableView fx:id="tableViewProblem" prefHeight="200.0" prefWidth="465.0">
+            <TableView fx:id="tableViewProblem" editable="true" prefHeight="200.0" prefWidth="465.0">
                <columns>
                   <TableColumn fx:id="colProblemID" prefWidth="145.0" text="ID" />
                   <TableColumn fx:id="colProblemDesc" minWidth="0.0" prefWidth="167.0" text="Problem" />
@@ -50,12 +50,12 @@
             </TableView>
          </children>
       </Group>
-      <Group fx:id="groupUpdateProblem" disable="true" layoutX="171.0" layoutY="136.0">
+      <Group fx:id="groupUpdateProblem" layoutX="171.0" layoutY="136.0">
          <children>
             <TextField fx:id="txtProblemID" layoutX="67.0" />
-            <Text layoutX="28.0" layoutY="3.8125" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
+            <Text layoutX="28.0" layoutY="12.8125" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
             <TextField fx:id="txtProblemDesc" layoutX="67.0" layoutY="42.0" />
-            <Text layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Problem:" textAlignment="RIGHT" />
+            <Text layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Problem:" textAlignment="RIGHT" />
             <CheckBox fx:id="checkProblemIsAdd" layoutX="67.0" layoutY="90.0" mnemonicParsing="false" text="Is Add" />
             <CheckBox fx:id="checkProblemIsDelete" layoutX="66.0" layoutY="114.0" mnemonicParsing="false" text="Is Delete" />
             <Button fx:id="btnProblemUpdate" layoutX="102.0" layoutY="147.0" mnemonicParsing="false" onAction="#OnBtnProblemUpdateClicked" text="Update" />
