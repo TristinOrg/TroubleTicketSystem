@@ -4,7 +4,7 @@
  */
 package controller;
 
-import application.Main;
+import applications.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

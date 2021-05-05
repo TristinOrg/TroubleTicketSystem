@@ -2,7 +2,7 @@
  * author 	: Tristin Wen
  * date 	: 2021/05/05
  */
-package application;
+package applications;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +21,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		try {
 			stage 			= primaryStage;
-			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("views/LoginView.fxml"));
+			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/LoginView.fxml"));
 			Scene scene 	= new Scene(root);
 			stage.setTitle("Login View");
 			stage.setScene(scene);
