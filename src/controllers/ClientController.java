@@ -15,8 +15,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import models.ClientModel;
@@ -36,7 +38,16 @@ public class ClientController implements Initializable  {
 	
 	@FXML private Group groupProblemList;
 	@FXML private TableView<Problem> tableLis;
-	  
+	@FXML private TableColumn<Problem, Integer> colID;
+	@FXML private TableColumn<Problem, String> colProblem;
+	@FXML private TableColumn<Problem, String> colDate;
+	
+	ClientModel model;
+	
+	public ClientController() {
+		model = new ClientModel();
+	}
+	
 	public static void setUserid(int user_id) {
 		userid = user_id;
 		System.out.println("Welcome id " + userid);
@@ -60,6 +71,12 @@ public class ClientController implements Initializable  {
     public void OnBtnProblemListClicked() {
      	groupDescribe.setVisible(false);
      	groupProblemList.setVisible(true);
+     	
+     	colID.setCellValueFactory(new PropertyValueFactory<Problem,Integer>("id"));
+     	colProblem.setCellValueFactory(new PropertyValueFactory<Problem, String>("desc"));
+     	colDate.setCellValueFactory(new PropertyValueFactory<Problem, String>("date"));
+     	
+     	tableLis.getItems().addAll(model.GetProblemList());
     }
     
     //btnLogout click event
