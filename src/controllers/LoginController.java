@@ -28,7 +28,7 @@ public class LoginController {
 	  
 	  public void Login() { 
 		  
-		  txtErrorMsg.setText("");
+		  txtErrorMsg.setText("");	  
 		  
 		  String username = this.txtUserName.getText();
 		  String password = this.txtPassword.getText();
@@ -45,6 +45,8 @@ public class LoginController {
 			  txtErrorMsg.setText("User name / Password Cannot be empty or spaces");
 			  return;
 		  }
+		  
+		  checkCredentials(username, password);
 	  }
 	  
 	  public void checkCredentials(String username, String password) {
