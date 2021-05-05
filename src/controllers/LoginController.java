@@ -26,7 +26,7 @@ public class LoginController {
 		  model = new LoginModel();
 	  }
 	  
-	  public void Login() { 
+	  public void OnBtnSubmitClicked() { 
 		  
 		  txtErrorMsg.setText("");	  
 		  
