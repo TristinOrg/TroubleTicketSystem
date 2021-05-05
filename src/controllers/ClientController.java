@@ -2,7 +2,7 @@
  * author 	: Tristin Wen
  * date 	: 2021/05/05
  */
-package controller;
+package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
