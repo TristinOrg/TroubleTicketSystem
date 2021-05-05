@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientController">
+   <children>
+      <TextField fx:id="txtDesc" layoutX="75.0" layoutY="66.0" prefHeight="216.0" prefWidth="426.0" />
+      <Text layoutX="75.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Describe your problem：" />
+      <Button fx:id="btnSubmit" layoutX="273.0" layoutY="306.0" mnemonicParsing="false" onAction="#SendProblem" text="Submit" />
+      <Text fx:id="txtErrorMsg" layoutX="8.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="588.0" />
+   </children>
+</AnchorPane>
