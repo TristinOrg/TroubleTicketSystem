@@ -8,6 +8,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
@@ -49,6 +51,7 @@ public class AdminController implements Initializable {
 	@FXML private Group groupViewProblems;
 	@FXML private TableView<Problem> tableViewProblem;
 	@FXML private TableColumn<Problem, Integer> colProblemID;
+	@FXML private TableColumn<Problem, Integer> colProblemUserID;
 	@FXML private TableColumn<Problem, String>  colProblemDesc;
 	@FXML private TableColumn<Problem, String>	colProblemDate;
 	
@@ -78,6 +81,7 @@ public class AdminController implements Initializable {
 		groupViewProblems.setVisible(false);
 		groupUpdateAccounts.setVisible(false);
 		groupUpdateProblem.setVisible(false);
+		txtErrorMsg.setText("");
 		
 		ArrayList<User> userList = model.GetAccountsData();
 		if (userList!=null && userList.size()>0) 
@@ -103,6 +107,18 @@ public class AdminController implements Initializable {
 		groupViewProblems.setVisible(true);
 		groupUpdateAccounts.setVisible(false);
 		groupUpdateProblem.setVisible(false);
+		txtErrorMsg.setText("");
+		
+		ArrayList<Problem> problemList = model.GetProblemData();
+		if (problemList!=null && problemList.size()>0) 
+		{
+	     	colProblemID.setCellValueFactory(new PropertyValueFactory<Problem,Integer>("id"));
+	     	colProblemUserID.setCellValueFactory(new PropertyValueFactory<Problem, Integer>("userId"));
+	     	colProblemDesc.setCellValueFactory(new PropertyValueFactory<Problem, String>("desc"));
+	     	colProblemDate.setCellValueFactory(new PropertyValueFactory<Problem, String>("date"));
+	     	
+	     	tableViewProblem.getItems().addAll(problemList);
+		}
 	}
 	
 	public void OnBtnUpdateProblemClicked() {

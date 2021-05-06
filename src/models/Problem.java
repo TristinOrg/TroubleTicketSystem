@@ -9,35 +9,43 @@ public class Problem {
 	private SimpleStringProperty desc;
 	private SimpleStringProperty date;
 	
+	public Problem() 
+	{
+		id 		= new SimpleIntegerProperty();
+		userId 	= new SimpleIntegerProperty();
+		desc 	= new SimpleStringProperty();
+		date 	= new SimpleStringProperty();
+	}
+	
 	public void SetId(int id) {
-		this.id = new SimpleIntegerProperty(id);
+		this.id.set(id);
 	}
 	
 	public void SetUserId(int userId) {
-		this.userId = new SimpleIntegerProperty(userId);
+		this.userId.set(userId);
 	}
 	
 	public void SetDesc(String desc) {
-		this.desc = new SimpleStringProperty(desc);
+		this.desc.set(desc);
 	}
 	
 	public void SetDate(String date) {
-		this.date = new SimpleStringProperty(date);
+		this.date.set(date);
 	}
 	
 	public int GetId() {
-		return this.id.getValue();
+		return this.id.get();
 	}
 	
 	public int GetUserId() {
-		return this.userId.getValue();
+		return this.userId.get();
 	}
 	
 	public String GetDesc() {
-		return this.desc.getValue();
+		return this.desc.get();
 	}
 	
 	public String GetDate() {
-		return this.date.getValue();
+		return this.date.get();
 	}
 }

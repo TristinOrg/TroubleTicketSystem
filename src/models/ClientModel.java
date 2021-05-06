@@ -34,9 +34,10 @@ public class ClientModel extends DBConnect {
 			{
 				Problem problem = new Problem();
 				problem.SetId(rs.getInt("ID"));
+				problem.SetUserId(rs.getInt("UserID"));
 				problem.SetDesc(rs.getString("Description"));
 				problem.SetDate(rs.getString("Date"));
-		
+				System.out.println("ID: "+problem.GetId()+" UserID: "+problem.GetUserId()+" Description: "+problem.GetDesc()+" Date: "+problem.GetDate());
 				problemList.add(problem);
 			}
 			

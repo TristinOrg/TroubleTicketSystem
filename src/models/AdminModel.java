@@ -41,6 +41,7 @@ public class AdminModel extends DBConnect {
 				user.SetUserName(rs.getString("UserName"));
 				user.SetPassword(rs.getString("Password"));
 				user.SetIsAdmin(rs.getBoolean("IsAdmin"));
+				System.out.println("ID: "+user.GetId()+" UserName: "+user.GetUserName()+" Password: "+user.GetPassword()+" IsAdmin: "+user.GetIsAdmin());
 				userList.add(user);
 			}
 		} 
@@ -59,7 +60,7 @@ public class AdminModel extends DBConnect {
 			String sql = "";
 			if (isAdd) 
 			{
-				sql = "INSERT INTO t_wen_users(ID,UserName,Password,IsAdmin)VALUES(?,?,?,?)";
+				sql = "INSERT IGNORE INTO t_wen_users(ID,UserName,Password,IsAdmin)VALUES(?,?,?,?)";
 			}
 			else if(isDelete) 
 			{
@@ -117,9 +118,10 @@ public class AdminModel extends DBConnect {
 			{
 				Problem problem = new Problem();
 				problem.SetId(rs.getInt("ID"));
+				problem.SetUserId(rs.getInt("UserID"));
 				problem.SetDesc(rs.getString("Description"));
 				problem.SetDate(rs.getString("Date"));
-		
+				System.out.println("ID: "+problem.GetId()+" UserID: "+problem.GetUserId()+" Description: "+problem.GetDesc()+" Date: "+problem.GetDate());
 				problemList.add(problem);
 			}
 		} 
@@ -138,7 +140,7 @@ public class AdminModel extends DBConnect {
 			String sql = "";
 			if (isAdd) 
 			{
-				sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)VALUES(?,?,?,?)";
+				sql = "INSERT IGNORE INTO t_wen_problems(ID,UserID,Description,Date)VALUES(?,?,?,?)";
 			}
 			else if(isDelete) 
 			{

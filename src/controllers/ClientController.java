@@ -38,9 +38,9 @@ public class ClientController implements Initializable  {
 	@FXML private Text txtErrorMsg;
 	
 	@FXML private Group groupProblemList;
-	@FXML private TableView<Problem> tableLis;
+	@FXML private TableView<Problem> tableList;
 	@FXML private TableColumn<Problem, Integer> colID;
-	@FXML private TableColumn<Problem, String> colUserID;
+	@FXML private TableColumn<Problem, Integer> colUserID;
 	@FXML private TableColumn<Problem, String> colDesc;
 	@FXML private TableColumn<Problem, String> colDate;
 	
@@ -75,7 +75,7 @@ public class ClientController implements Initializable  {
      	groupProblemList.setVisible(true);
      	
      	colID.setCellValueFactory(new PropertyValueFactory<Problem,Integer>("id"));
-    	colID.setCellValueFactory(new PropertyValueFactory<Problem,Integer>("userId"));
+    	colUserID.setCellValueFactory(new PropertyValueFactory<Problem,Integer>("userId"));
      	colDesc.setCellValueFactory(new PropertyValueFactory<Problem, String>("desc"));
      	colDate.setCellValueFactory(new PropertyValueFactory<Problem, String>("date"));
      	
@@ -91,7 +91,7 @@ public class ClientController implements Initializable  {
      		System.out.println("The size of the problem list is 0");
      		return;
      	}
-     	tableLis.getItems().addAll(problemList);
+     	tableList.getItems().addAll(problemList);
     }
     
     //btnLogout click event
@@ -113,5 +113,6 @@ public class ClientController implements Initializable  {
     	String desc = txtDesc.getText();
 		boolean isSuccess = model.SubmitNewProblem(ClientController.userid, desc);
 		System.out.println("IsSuccess "+isSuccess);
+		txtErrorMsg.setText(isSuccess?"Submit success":"Submit failed");
     }
 }
