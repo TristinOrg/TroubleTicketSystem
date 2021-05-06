@@ -66,8 +66,11 @@ public class AdminController implements Initializable {
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		OnBtnViewAccountsClicked();
-		txtErrorMsg.setText("");
+		groupViewAccounts.setVisible(false);
+		groupViewProblems.setVisible(false);
+		groupUpdateAccounts.setVisible(false);
+		groupUpdateProblem.setVisible(false);
+		//txtErrorMsg.setText("");
 	}
 	
 	public void OnBtnViewAccountsClicked() {
