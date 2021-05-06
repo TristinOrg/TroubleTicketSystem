@@ -20,17 +20,20 @@
          <children>
             <TableView fx:id="tableViewAccount" editable="true" prefHeight="200.0" prefWidth="465.0">
               <columns>
-                <TableColumn fx:id="colAccountID" prefWidth="145.0" text="ID" />
-                <TableColumn fx:id="colAccountPassword" minWidth="0.0" prefWidth="167.0" text="Password" />
-                  <TableColumn fx:id="colAccountIsAdmin" minWidth="0.0" prefWidth="189.0" text="IsAdmin" />
+                <TableColumn fx:id="colAccountID" prefWidth="84.0" text="ID" />
+                  <TableColumn fx:id="colAccountUserName" minWidth="0.0" prefWidth="104.0" text="UserName" />
+                <TableColumn fx:id="colAccountPassword" minWidth="0.0" prefWidth="150.0" text="Password" />
+                  <TableColumn fx:id="colAccountIsAdmin" minWidth="0.0" prefWidth="130.0" text="IsAdmin" />
               </columns>
             </TableView>
          </children>
       </Group>
-      <Group fx:id="groupUpdateAccounts" layoutX="171.0" layoutY="135.0">
+      <Group fx:id="groupUpdateAccounts" layoutX="171.0" layoutY="135.0" opacity="0.0">
          <children>
-            <TextField fx:id="txtAccountID" layoutX="67.0" />
-            <Text layoutX="28.0" layoutY="12.8" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
+            <TextField fx:id="txtAccountID" layoutX="67.0" layoutY="-20.0" />
+            <Text layoutX="28.0" layoutY="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
+            <TextField fx:id="txtAccountUserName" layoutX="67.0" layoutY="10.0" />
+            <Text layoutX="-10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName:" textAlignment="RIGHT" />
             <TextField fx:id="txtAccountPassword" layoutX="67.0" layoutY="42.0" />
             <Text layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" textAlignment="RIGHT" />
             <CheckBox fx:id="checkAccountIsAdmin" layoutX="67.0" layoutY="70.0" mnemonicParsing="false" text="Is Admin" />
@@ -39,7 +42,7 @@
             <Button fx:id="btnAccountUpdate" layoutX="102.0" layoutY="147.0" mnemonicParsing="false" onAction="#OnBtnAccountUpdateClicked" text="Update" />
          </children>
       </Group>
-      <Group fx:id="groupViewProblems" layoutX="74.0" layoutY="128.0">
+      <Group fx:id="groupViewProblems" layoutX="74.0" layoutY="128.0" opacity="0.0">
          <children>
             <TableView fx:id="tableViewProblem" editable="true" prefHeight="200.0" prefWidth="465.0">
                <columns>
@@ -50,10 +53,8 @@
             </TableView>
          </children>
       </Group>
-      <Group fx:id="groupUpdateProblem" layoutX="171.0" layoutY="136.0">
+      <Group fx:id="groupUpdateProblem" layoutX="171.0" layoutY="136.0" opacity="0.0">
          <children>
-            <TextField fx:id="txtProblemID" layoutX="67.0" />
-            <Text layoutX="28.0" layoutY="12.8125" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
             <TextField fx:id="txtProblemDesc" layoutX="67.0" layoutY="42.0" />
             <Text layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Problem:" textAlignment="RIGHT" />
             <CheckBox fx:id="checkProblemIsAdd" layoutX="67.0" layoutY="90.0" mnemonicParsing="false" text="Is Add" />

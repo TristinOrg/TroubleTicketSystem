@@ -5,6 +5,7 @@
 package controllers;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import models.AdminModel;
 import models.Problem;
 import models.User;
@@ -29,11 +31,13 @@ public class AdminController implements Initializable {
 	@FXML private Group groupViewAccounts;
 	@FXML private TableView<User> tableViewAccount;
 	@FXML private TableColumn<User, Integer> colAccountID;
+	@FXML private TableColumn<User, String>  colAccountUserName;
 	@FXML private TableColumn<User, String>  colAccountPassword;
-	@FXML private TableColumn<User, String>	 colAccountIsAdmin;
+	@FXML private TableColumn<User, Boolean> colAccountIsAdmin;
 	
 	@FXML private Group groupUpdateAccounts;
 	@FXML private TextField txtAccountID;
+	@FXML private TextField txtAccountUserName;
 	@FXML private TextField txtAccountPassword;
 	@FXML private CheckBox checkAccountIsAdmin;
 	@FXML private CheckBox checkAccountIsAdd;
@@ -70,6 +74,17 @@ public class AdminController implements Initializable {
 		groupViewProblems.setVisible(false);
 		groupUpdateAccounts.setVisible(false);
 		groupUpdateProblem.setVisible(false);
+		
+		ArrayList<User> userList = model.GetAccountsData();
+		if (userList!=null && userList.size()>0) 
+		{
+	     	colAccountID.setCellValueFactory(new PropertyValueFactory<User,Integer>("id"));
+	     	colAccountUserName.setCellValueFactory(new PropertyValueFactory<User, String>("userName"));
+	     	colAccountPassword.setCellValueFactory(new PropertyValueFactory<User, String>("password"));
+	     	colAccountIsAdmin.setCellValueFactory(new PropertyValueFactory<User, Boolean>("isAdmin"));
+	     	
+	     	tableViewAccount.getItems().addAll(userList);
+		}
 	}
 	
 	public void OnBtnUpdateAccountClicked() {
