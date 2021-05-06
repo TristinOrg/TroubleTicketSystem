@@ -121,7 +121,7 @@ public class AdminController implements Initializable {
 		boolean isAdmin  	= checkAccountIsAdmin.isSelected();
 		boolean isSuccess 	= model.UpdateAccount(Integer.parseInt(id), userName, pwd, isAdd, isDelete, isAdmin);
 	    System.out.println("IsSuccess "+isSuccess);
-		//txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
+		txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
 	}
 	
 	public void OnBtnProblemUpdateClicked() {
@@ -130,7 +130,7 @@ public class AdminController implements Initializable {
 		boolean isAdd 		= checkAccountIsAdd.isSelected();
 		boolean isDelete 	= checkAccountIsDelete.isSelected();
 		boolean isSuccess 	= model.UpdateProblem(Integer.parseInt(id),ClientController.userid, description, isAdd, isDelete);
-	    //txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
+	    txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
 	    System.out.println("IsSuccess "+isSuccess);
 	}
 }

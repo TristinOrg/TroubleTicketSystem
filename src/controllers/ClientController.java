@@ -6,6 +6,7 @@ package controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import applications.Main;
@@ -25,7 +26,7 @@ import models.ClientModel;
 import models.Problem;
 
 public class ClientController implements Initializable  {
-	static int userid;
+	public static int userid;
 	
 	@FXML private Button btnDescribe;
 	@FXML private Button btnProblemList;
@@ -39,7 +40,8 @@ public class ClientController implements Initializable  {
 	@FXML private Group groupProblemList;
 	@FXML private TableView<Problem> tableLis;
 	@FXML private TableColumn<Problem, Integer> colID;
-	@FXML private TableColumn<Problem, String> colProblem;
+	@FXML private TableColumn<Problem, String> colUserID;
+	@FXML private TableColumn<Problem, String> colDesc;
 	@FXML private TableColumn<Problem, String> colDate;
 	
 	ClientModel model;
@@ -73,10 +75,23 @@ public class ClientController implements Initializable  {
      	groupProblemList.setVisible(true);
      	
      	colID.setCellValueFactory(new PropertyValueFactory<Problem,Integer>("id"));
-     	colProblem.setCellValueFactory(new PropertyValueFactory<Problem, String>("desc"));
+    	colID.setCellValueFactory(new PropertyValueFactory<Problem,Integer>("userId"));
+     	colDesc.setCellValueFactory(new PropertyValueFactory<Problem, String>("desc"));
      	colDate.setCellValueFactory(new PropertyValueFactory<Problem, String>("date"));
      	
-     	tableLis.getItems().addAll(model.GetProblemList());
+     	ArrayList<Problem> problemList = model.GetProblemList();
+     	if(problemList == null)
+     	{
+     		System.out.println("Problem list is null");
+     		return;
+     	}
+     	
+     	if(problemList.size() == 0)
+     	{
+     		System.out.println("The size of the problem list is 0");
+     		return;
+     	}
+     	tableLis.getItems().addAll(problemList);
     }
     
     //btnLogout click event
@@ -95,6 +110,8 @@ public class ClientController implements Initializable  {
     
     //btnSubmit click event
     public void OnBtnSubmitClicked() {
-		
-	}
+    	String desc = txtDesc.getText();
+		boolean isSuccess = model.SubmitNewProblem(ClientController.userid, desc);
+		System.out.println("IsSuccess "+isSuccess);
+    }
 }

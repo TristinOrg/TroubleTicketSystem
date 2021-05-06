@@ -7,9 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import Dao.DBConnect;
+import controllers.ClientController;
 
 public class ClientModel extends DBConnect {
 	
@@ -27,8 +29,6 @@ public class ClientModel extends DBConnect {
 			String sql 	= "SELECT * from t_wen_problems";
 			rs 			= stmt.executeQuery(sql);
 			
-			connect().close();
-			
 			problemList.clear();
 			while(rs.next())
 			{
@@ -39,11 +39,39 @@ public class ClientModel extends DBConnect {
 		
 				problemList.add(problem);
 			}
+			
+			connect().close();
 		} 
 		catch (SQLException se) 
 		{
 			se.printStackTrace();
 		}
 		return problemList;
+	}
+	
+	
+	public boolean SubmitNewProblem(int id,String description) 
+	{
+		try 
+		{
+			String sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)Values(?,?,?,?)";
+		    ppstmt = connect().prepareStatement(sql);
+		    
+		    ppstmt.setInt(1, id);
+		    ppstmt.setInt(2,ClientController.userid);
+		    ppstmt.setString(3, description);
+	
+		    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			ppstmt.setString(4,df.format(new java.util.Date()));
+			
+			int rs = ppstmt.executeUpdate();
+			return rs>0;
+		} 
+		catch (SQLException se) 
+		{
+			se.printStackTrace();
+		}
+		
+		return false;
 	}
 }

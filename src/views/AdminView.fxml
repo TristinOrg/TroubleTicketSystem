@@ -16,14 +16,14 @@
       <Button fx:id="btnUpdateAccount" layoutX="319.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnUpdateAccountClicked" text="Update Account" />
       <Button fx:id="btnViewProblems" layoutX="189.0" layoutY="72.0" mnemonicParsing="false" onAction="#OnBtnViewProblemsClicked" text="View Problems" />
       <Button fx:id="btnUpdateProblem" layoutX="319.0" layoutY="72.0" mnemonicParsing="false" onAction="#OnBtnUpdateProblemClicked" text="Update Problem" />
-      <Group fx:id="groupViewAccounts" layoutX="74.0" layoutY="127.0">
+      <Group fx:id="groupViewAccounts" layoutX="12.0" layoutY="127.0">
          <children>
-            <TableView fx:id="tableViewAccount" editable="true" prefHeight="200.0" prefWidth="465.0">
+            <TableView fx:id="tableViewAccount" editable="true" prefHeight="238.0" prefWidth="575.0">
               <columns>
-                <TableColumn fx:id="colAccountID" prefWidth="84.0" text="ID" />
-                  <TableColumn fx:id="colAccountUserName" minWidth="0.0" prefWidth="104.0" text="UserName" />
-                <TableColumn fx:id="colAccountPassword" minWidth="0.0" prefWidth="150.0" text="Password" />
-                  <TableColumn fx:id="colAccountIsAdmin" minWidth="0.0" prefWidth="130.0" text="IsAdmin" />
+                <TableColumn fx:id="colAccountID" prefWidth="147.0" text="ID" />
+                  <TableColumn fx:id="colAccountUserName" minWidth="0.0" prefWidth="130.0" text="UserName" />
+                <TableColumn fx:id="colAccountPassword" minWidth="0.0" prefWidth="163.0" text="Password" />
+                  <TableColumn fx:id="colAccountIsAdmin" minWidth="0.0" prefWidth="134.0" text="IsAdmin" />
               </columns>
             </TableView>
          </children>
@@ -42,13 +42,14 @@
             <Button fx:id="btnAccountUpdate" layoutX="102.0" layoutY="147.0" mnemonicParsing="false" onAction="#OnBtnAccountUpdateClicked" text="Update" />
          </children>
       </Group>
-      <Group fx:id="groupViewProblems" layoutX="74.0" layoutY="128.0">
+      <Group fx:id="groupViewProblems" layoutX="12.0" layoutY="128.0">
          <children>
-            <TableView fx:id="tableViewProblem" editable="true" prefHeight="200.0" prefWidth="465.0">
+            <TableView fx:id="tableViewProblem" editable="true" prefHeight="238.0" prefWidth="575.0">
                <columns>
-                  <TableColumn fx:id="colProblemID" prefWidth="145.0" text="ID" />
-                  <TableColumn fx:id="colProblemDesc" minWidth="0.0" prefWidth="167.0" text="Problem" />
-                  <TableColumn fx:id="colProblemDate" minWidth="0.0" prefWidth="189.0" text="Date" />
+                  <TableColumn fx:id="colProblemID" prefWidth="100.0" text="ID" />
+                  <TableColumn fx:id="colProblemUserID" prefWidth="100.0" text="UserID" />
+                  <TableColumn fx:id="colProblemDesc" minWidth="0.0" prefWidth="250.0" text="Description" />
+                  <TableColumn fx:id="colProblemDate" minWidth="0.0" prefWidth="125.0" text="Date" />
                </columns>
             </TableView>
          </children>

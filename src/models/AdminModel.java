@@ -157,7 +157,7 @@ public class AdminModel extends DBConnect {
 				ppstmt.setInt(2,userId);
 				ppstmt.setString(3,description);
 				
-				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				ppstmt.setString(4,df.format(new java.util.Date()));
 			}
 			else if(isDelete)

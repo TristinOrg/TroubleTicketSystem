@@ -5,11 +5,16 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Problem {
 	private SimpleIntegerProperty id;
+	private SimpleIntegerProperty userId;
 	private SimpleStringProperty desc;
 	private SimpleStringProperty date;
 	
 	public void SetId(int id) {
 		this.id = new SimpleIntegerProperty(id);
+	}
+	
+	public void SetUserId(int userId) {
+		this.userId = new SimpleIntegerProperty(userId);
 	}
 	
 	public void SetDesc(String desc) {
@@ -22,6 +27,10 @@ public class Problem {
 	
 	public int GetId() {
 		return this.id.getValue();
+	}
+	
+	public int GetUserId() {
+		return this.userId.getValue();
 	}
 	
 	public String GetDesc() {

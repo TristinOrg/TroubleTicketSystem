@@ -25,9 +25,10 @@
          <children>
             <TableView fx:id="tableList" editable="true" layoutX="12.0" layoutY="74.0" prefHeight="238.0" prefWidth="575.0">
               <columns>
-                <TableColumn fx:id="colID" prefWidth="105.0" text="ID" />
-                <TableColumn fx:id="colProblem" prefWidth="362.0" text="Problem" />
-                  <TableColumn fx:id="colDate" prefWidth="107.0" text="Date" />
+                <TableColumn fx:id="colID" prefWidth="100.0" text="ID" />
+                  <TableColumn fx:id="colUserID" prefWidth="100.0" text="UserID" />
+                <TableColumn fx:id="colDesc" prefWidth="250.0" text="Description" />
+                  <TableColumn fx:id="colDate" prefWidth="125.0" text="Date" />
               </columns>
             </TableView>
          </children>
