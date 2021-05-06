@@ -17,6 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import models.AdminModel;
 import models.Problem;
 import models.User;
@@ -56,6 +57,8 @@ public class AdminController implements Initializable {
 	@FXML private CheckBox checkProblemIsAdd;
 	@FXML private CheckBox checkProblemIsDelet;
 	@FXML private Button btnProblemUpdate;
+	
+	@FXML private Text txtErrorMsg;
 	
 	AdminModel model;
 	public AdminController() {

@@ -28,7 +28,7 @@
             </TableView>
          </children>
       </Group>
-      <Group fx:id="groupUpdateAccounts" layoutX="171.0" layoutY="135.0" opacity="0.0">
+      <Group fx:id="groupUpdateAccounts" layoutX="171.0" layoutY="135.0">
          <children>
             <TextField fx:id="txtAccountID" layoutX="67.0" layoutY="-20.0" />
             <Text layoutX="28.0" layoutY="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
@@ -42,7 +42,7 @@
             <Button fx:id="btnAccountUpdate" layoutX="102.0" layoutY="147.0" mnemonicParsing="false" onAction="#OnBtnAccountUpdateClicked" text="Update" />
          </children>
       </Group>
-      <Group fx:id="groupViewProblems" layoutX="74.0" layoutY="128.0" opacity="0.0">
+      <Group fx:id="groupViewProblems" layoutX="74.0" layoutY="128.0">
          <children>
             <TableView fx:id="tableViewProblem" editable="true" prefHeight="200.0" prefWidth="465.0">
                <columns>
@@ -53,8 +53,10 @@
             </TableView>
          </children>
       </Group>
-      <Group fx:id="groupUpdateProblem" layoutX="171.0" layoutY="136.0" opacity="0.0">
+      <Group fx:id="groupUpdateProblem" layoutX="171.0" layoutY="136.0">
          <children>
+            <TextField fx:id="txtProblemID" layoutX="67.0" />
+            <Text layoutX="10.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" textAlignment="RIGHT" />
             <TextField fx:id="txtProblemDesc" layoutX="67.0" layoutY="42.0" />
             <Text layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Problem:" textAlignment="RIGHT" />
             <CheckBox fx:id="checkProblemIsAdd" layoutX="67.0" layoutY="90.0" mnemonicParsing="false" text="Is Add" />
@@ -62,5 +64,6 @@
             <Button fx:id="btnProblemUpdate" layoutX="102.0" layoutY="147.0" mnemonicParsing="false" onAction="#OnBtnProblemUpdateClicked" text="Update" />
          </children>
       </Group>
+      <Text fx:id="txtErrorMsg" layoutX="177.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>
