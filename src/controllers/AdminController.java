@@ -55,7 +55,7 @@ public class AdminController implements Initializable {
 	@FXML private TextField txtProblemID;
 	@FXML private TextField txtProblemDesc;
 	@FXML private CheckBox checkProblemIsAdd;
-	@FXML private CheckBox checkProblemIsDelet;
+	@FXML private CheckBox checkProblemIsDelete;
 	@FXML private Button btnProblemUpdate;
 	
 	@FXML private Text txtErrorMsg;
@@ -66,10 +66,8 @@ public class AdminController implements Initializable {
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		groupViewAccounts.setVisible(false);
-		groupViewProblems.setVisible(false);
-		groupUpdateAccounts.setVisible(false);
-		groupUpdateProblem.setVisible(false);
+		OnBtnViewAccountsClicked();
+		txtErrorMsg.setText("");
 	}
 	
 	public void OnBtnViewAccountsClicked() {
@@ -112,7 +110,14 @@ public class AdminController implements Initializable {
 	}
 	
 	public void OnBtnAccountUpdateClicked() {
-		
+		String id 			= txtAccountID.getText();
+		String pwd 			= txtAccountPassword.getText();
+		String userName 	= txtAccountUserName.getText();
+		boolean isAdd 		= checkAccountIsAdd.isSelected();
+		boolean isDelete 	= checkAccountIsDelete.isSelected();
+		boolean isAdmin  	= checkAccountIsAdmin.isSelected();
+		boolean isSuccess 	= model.UpdateAccount(Integer.parseInt(id), userName, pwd, isAdd, isDelete, isAdmin);
+	    txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
 	}
 	
 	public void OnBtnProblemUpdateClicked() {

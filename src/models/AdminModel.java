@@ -49,7 +49,7 @@ public class AdminModel extends DBConnect {
 	}
 	
 	//Update Account
-	public void UpdateAccount(int userId,String userName,String password,Boolean isAdd,Boolean isAdmin)
+	public boolean UpdateAccount(int userId,String userName,String password,Boolean isAdd,boolean isDelete,Boolean isAdmin)
 	{
 		try
 		{
@@ -57,6 +57,10 @@ public class AdminModel extends DBConnect {
 			if (isAdd) 
 			{
 				sql = "INSERT INTO t_wen_users(ID,UserName,Password,IsAdmin)VALUES(?,?,?,?)";
+			}
+			else if(isDelete) 
+			{
+				sql = "DELETE FROM t_wen_users WHERE ID =?";
 			}
 			else 
 			{
@@ -72,6 +76,10 @@ public class AdminModel extends DBConnect {
 				ppstmt.setString(3,password);
 				ppstmt.setBoolean(4, isAdmin);
 			}
+			else if(isDelete)
+			{
+				ppstmt.setInt(1, userId);
+			}
 			else 
 			{
 				ppstmt.setString(1, password);
@@ -79,14 +87,13 @@ public class AdminModel extends DBConnect {
 				ppstmt.setInt(3, userId);
 			}
 			
-			ppstmt.executeQuery();
-			connect().close();
-			
+			ResultSet rs = ppstmt.executeQuery();	
+			return rs.next();
 		} 
 		catch (SQLException se)
 		{
 			se.printStackTrace();
 		}
-
+		return false;
 	}
 }
