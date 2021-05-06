@@ -4,10 +4,12 @@
  */
 package models;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import Dao.DBConnect;
@@ -99,7 +101,7 @@ public class AdminModel extends DBConnect {
 	}
 	
 	//get account table
-	public ArrayList<User> GetProblemData() 
+	public ArrayList<Problem> GetProblemData() 
 	{
 		ResultSet rs = null;
 		try 
@@ -125,7 +127,7 @@ public class AdminModel extends DBConnect {
 		{
 			se.printStackTrace();
 		}
-		return userList;
+		return problemList;
 	}
 		
 	//Update Problem
@@ -136,7 +138,7 @@ public class AdminModel extends DBConnect {
 			String sql = "";
 			if (isAdd) 
 			{
-				sql = "INSERT INTO t_wen_problems(ID,UserID,Description)VALUES(?,?,?)";
+				sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)VALUES(?,?,?,?)";
 			}
 			else if(isDelete) 
 			{
@@ -154,6 +156,9 @@ public class AdminModel extends DBConnect {
 				ppstmt.setInt(1, id);
 				ppstmt.setInt(2,userId);
 				ppstmt.setString(3,description);
+				
+				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+				ppstmt.setString(4,df.format(new java.util.Date()));
 			}
 			else if(isDelete)
 			{

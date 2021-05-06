@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import models.AdminModel;
+import models.ClientModel;
 import models.Problem;
 import models.User;
 
@@ -70,7 +71,6 @@ public class AdminController implements Initializable {
 		groupViewProblems.setVisible(false);
 		groupUpdateAccounts.setVisible(false);
 		groupUpdateProblem.setVisible(false);
-		//txtErrorMsg.setText("");
 	}
 	
 	public void OnBtnViewAccountsClicked() {
@@ -120,10 +120,17 @@ public class AdminController implements Initializable {
 		boolean isDelete 	= checkAccountIsDelete.isSelected();
 		boolean isAdmin  	= checkAccountIsAdmin.isSelected();
 		boolean isSuccess 	= model.UpdateAccount(Integer.parseInt(id), userName, pwd, isAdd, isDelete, isAdmin);
-	    txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
+	    System.out.println("IsSuccess "+isSuccess);
+		//txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
 	}
 	
 	public void OnBtnProblemUpdateClicked() {
-		
+		String id 			= txtProblemID.getText();
+		String description 	= txtProblemDesc.getText();
+		boolean isAdd 		= checkAccountIsAdd.isSelected();
+		boolean isDelete 	= checkAccountIsDelete.isSelected();
+		boolean isSuccess 	= model.UpdateProblem(Integer.parseInt(id),ClientController.userid, description, isAdd, isDelete);
+	    //txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
+	    System.out.println("IsSuccess "+isSuccess);
 	}
 }
