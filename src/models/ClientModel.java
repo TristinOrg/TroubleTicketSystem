@@ -37,7 +37,7 @@ public class ClientModel extends DBConnect {
 				problem.setUserId(rs.getInt("UserID"));
 				problem.setDesc(rs.getString("Description"));
 				problem.setDate(rs.getString("Date"));
-				System.out.println("ID: "+problem.getId()+" UserID: "+problem.getUserId()+" Description: "+problem.getDesc()+" Date: "+problem.getDate());
+				//System.out.println("ID: "+problem.getId()+" UserID: "+problem.getUserId()+" Description: "+problem.getDesc()+" Date: "+problem.getDate());
 				problemList.add(problem);
 			}
 			
@@ -67,7 +67,7 @@ public class ClientModel extends DBConnect {
 			int rs = ppstmt.executeUpdate();
 			if(rs>0)
 			{
-			    System.out.println("insert new data: "+" userId: "+
+			    System.out.println("insert new data: userId: "+
 			    					ClientController.userid+" description: "+
 			    					description+" succeed");
 			} 

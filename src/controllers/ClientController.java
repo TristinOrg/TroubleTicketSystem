@@ -113,7 +113,7 @@ public class ClientController implements Initializable  {
     public void OnBtnSubmitClicked() {
     	String desc = txtDesc.getText();
 		boolean isSucced = model.SubmitNewProblem(ClientController.userid, desc);
-		System.out.println("IsSuccess "+isSucced);
+		System.out.println("IsSucceed "+isSucced);
 		txtErrorMsg.setText(isSucced?"Submit succed":"Submit failed");
     }
 }

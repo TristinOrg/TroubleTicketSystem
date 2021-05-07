@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import Dao.DBConnect;
+import controllers.ClientController;
 
 public class AdminModel extends DBConnect {
 	
@@ -41,7 +42,7 @@ public class AdminModel extends DBConnect {
 				user.setUserName(rs.getString("UserName"));
 				user.setPassword(rs.getString("Password"));
 				user.setIsAdmin(rs.getBoolean("IsAdmin"));
-				System.out.println("ID: "+user.getId()+" UserName: "+user.getUserName()+" Password: "+user.getPassword()+" IsAdmin: "+user.getIsAdmin());
+				//System.out.println("ID: "+user.getId()+" UserName: "+user.getUserName()+" Password: "+user.getPassword()+" IsAdmin: "+user.getIsAdmin());
 				userList.add(user);
 			}
 		} 
@@ -91,7 +92,14 @@ public class AdminModel extends DBConnect {
 				ppstmt.setInt(3, userId);
 			}
 			
-			int rs = ppstmt.executeUpdate();	
+			int rs = ppstmt.executeUpdate();
+			if(isAdd && rs>0)
+			{
+			    System.out.println("insert new data: "+" userId: "+
+			    					userId+" userName: "+
+			    					userName+" isAdmin: "+
+			    					isAdmin+" succeed");
+			} 
 			return rs > 0;
 		} 
 		catch (SQLException se)
@@ -121,7 +129,7 @@ public class AdminModel extends DBConnect {
 				problem.setUserId(rs.getInt("UserID"));
 				problem.setDesc(rs.getString("Description"));
 				problem.setDate(rs.getString("Date"));
-				System.out.println("ID: "+problem.getId()+" UserID: "+problem.getUserId()+" Description: "+problem.getDesc()+" Date: "+problem.getDate());
+				//System.out.println("ID: "+problem.getId()+" UserID: "+problem.getUserId()+" Description: "+problem.getDesc()+" Date: "+problem.getDate());
 				problemList.add(problem);
 			}
 		} 
@@ -171,7 +179,16 @@ public class AdminModel extends DBConnect {
 				ppstmt.setInt(2, id);
 			}
 			
-			int rs = ppstmt.executeUpdate();	
+			int rs = ppstmt.executeUpdate();
+			if(isAdd && rs>0)
+			{
+				if(rs>0)
+				{
+				    System.out.println("insert new data userId: "+
+				    					ClientController.userid+" description: "+
+				    					description+" succeed");
+				} 
+			}
 			return rs > 0;
 		} 
 		catch (SQLException se)
