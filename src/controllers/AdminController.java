@@ -150,6 +150,7 @@ public class AdminController implements Initializable {
 	
 	public void OnBtnAccountUpdateClicked() {
 		String id 			= txtAccountID.getText();
+		id 					= id.isEmpty()?"0":id;
 		String pwd 			= txtAccountPassword.getText();
 		String userName 	= txtAccountUserName.getText();
 		boolean isAdd 		= checkAccountIsAdd.isSelected();
@@ -162,6 +163,7 @@ public class AdminController implements Initializable {
 	
 	public void OnBtnProblemUpdateClicked() {
 		String id 			= txtProblemID.getText();
+		id 					= id.isEmpty()?"0":id;
 		String description 	= txtProblemDesc.getText();
 		boolean isAdd 		= checkProblemIsAdd.isSelected();
 		boolean isDelete 	= checkProblemIsDelete.isSelected();

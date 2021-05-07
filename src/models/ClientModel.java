@@ -51,21 +51,26 @@ public class ClientModel extends DBConnect {
 	}
 	
 	
-	public boolean SubmitNewProblem(int id,String description) 
+	public boolean SubmitNewProblem(int userId,String description) 
 	{
 		try 
 		{
-			String sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)Values(?,?,?,?)";
+			String sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)Values(null,?,?,?)";
 		    ppstmt = connect().prepareStatement(sql);
 		    
-		    ppstmt.setInt(1, id);
-		    ppstmt.setInt(2,ClientController.userid);
-		    ppstmt.setString(3, description);
+		    ppstmt.setInt(1,userId);
+		    ppstmt.setString(2, description);
 	
 		    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			ppstmt.setString(4,df.format(new java.util.Date()));
+			ppstmt.setString(3,df.format(new java.util.Date()));
 			
 			int rs = ppstmt.executeUpdate();
+			if(rs>0)
+			{
+			    System.out.println("insert new data: "+" userId: "+
+			    					ClientController.userid+" description: "+
+			    					description+" succeed");
+			} 
 			return rs>0;
 		} 
 		catch (SQLException se) 

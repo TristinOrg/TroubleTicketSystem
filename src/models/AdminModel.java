@@ -60,7 +60,7 @@ public class AdminModel extends DBConnect {
 			String sql = "";
 			if (isAdd) 
 			{
-				sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)Values(?,?,?,?)";
+				sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)Values(null,?,?,?)";
 			}
 			else if(isDelete) 
 			{
@@ -68,21 +68,21 @@ public class AdminModel extends DBConnect {
 			}
 			else 
 			{
-				sql = "UPDATE t_wen_users set Password=?,IsAdmin=? where ID=?";
+				sql = "UPDATE t_wen_users set Password=?,IsAdmin=? where ID=? or UserName =?";
 			}
 			
 			ppstmt = connect().prepareStatement(sql);
 			
 			if (isAdd)
 			{
-				ppstmt.setInt(1, userId);
-				ppstmt.setString(2,userName);
-				ppstmt.setString(3,password);
-				ppstmt.setBoolean(4, isAdmin);
+				ppstmt.setString(1,userName);
+				ppstmt.setString(2,password);
+				ppstmt.setBoolean(3, isAdmin);
 			}
 			else if(isDelete)
 			{
 				ppstmt.setInt(1, userId);
+				ppstmt.setString(2, userName);
 			}
 			else 
 			{
@@ -140,7 +140,7 @@ public class AdminModel extends DBConnect {
 			String sql = "";
 			if (isAdd) 
 			{
-				sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)VALUES(?,?,?,?)";
+				sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)VALUES(null,?,?,?)";
 			}
 			else if(isDelete) 
 			{
@@ -155,12 +155,11 @@ public class AdminModel extends DBConnect {
 			
 			if (isAdd)
 			{
-				ppstmt.setInt(1, id);
-				ppstmt.setInt(2,userId);
-				ppstmt.setString(3,description);
+				ppstmt.setInt(1,userId);
+				ppstmt.setString(2,description);
 				
 				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-				ppstmt.setString(4,df.format(new java.util.Date()));
+				ppstmt.setString(3,df.format(new java.util.Date()));
 			}
 			else if(isDelete)
 			{
