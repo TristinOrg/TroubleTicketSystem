@@ -90,6 +90,7 @@ public class AdminModel extends DBConnect {
 				ppstmt.setString(1, password);
 				ppstmt.setBoolean(2, isAdmin);
 				ppstmt.setInt(3, userId);
+				ppstmt.setString(4, userName);
 			}
 			
 			int rs = ppstmt.executeUpdate();
