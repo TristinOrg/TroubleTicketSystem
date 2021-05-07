@@ -21,7 +21,7 @@
             <Text fx:id="txtErrorMsg" layoutY="298.8125" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="588.0" />
          </children>
       </Group>
-      <Group fx:id="groupProblemList">
+      <Group fx:id="groupProblemList" opacity="0.0">
          <children>
             <TableView fx:id="tableList" editable="true" layoutX="12.0" layoutY="74.0" prefHeight="238.0" prefWidth="575.0">
               <columns>

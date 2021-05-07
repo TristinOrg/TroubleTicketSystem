@@ -60,7 +60,7 @@ public class AdminModel extends DBConnect {
 			String sql = "";
 			if (isAdd) 
 			{
-				sql = "INSERT IGNORE INTO t_wen_users(ID,UserName,Password,IsAdmin)VALUES(?,?,?,?)";
+				sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)Values(?,?,?,?)";
 			}
 			else if(isDelete) 
 			{
@@ -140,7 +140,7 @@ public class AdminModel extends DBConnect {
 			String sql = "";
 			if (isAdd) 
 			{
-				sql = "INSERT IGNORE INTO t_wen_problems(ID,UserID,Description,Date)VALUES(?,?,?,?)";
+				sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)VALUES(?,?,?,?)";
 			}
 			else if(isDelete) 
 			{

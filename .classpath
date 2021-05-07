@@ -6,6 +6,6 @@
 		</accessrules>
 	</classpathentry>
 	<classpathentry excluding="application/" kind="src" path="src"/>
-	<classpathentry kind="lib" path="libs/mysql-connector-java-8.0.23.jar"/>
+	<classpathentry kind="lib" path="libs/mysql-connector-java-8.0.24.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
