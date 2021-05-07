@@ -18,9 +18,9 @@
    <children>
       <Button fx:id="btnViewAccounts" layoutX="12.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnViewAccountsClicked" text="View Accounts" />
       <Button fx:id="btnUpdateAccount" layoutX="130.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnUpdateAccountClicked" text="Update Account" />
-      <Button fx:id="btnViewProblems" layoutX="272.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnViewProblemsClicked" text="View Problems" />
-      <Button fx:id="btnUpdateProblem" layoutX="388.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnUpdateProblemClicked" text="Update Problem" />
-      <Button fx:id="btnLogout" layoutX="533.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnLogoutClicked" text="Logout" />
+      <Button fx:id="btnViewProblems" layoutX="257.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnViewProblemsClicked" text="View Problems" />
+      <Button fx:id="btnUpdateProblem" layoutX="375.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnUpdateProblemClicked" text="Update Problem" />
+      <Button fx:id="btnLogout" layoutX="522.0" layoutY="35.0" mnemonicParsing="false" onAction="#OnBtnLogoutClicked" text="Logout" />
       <Group fx:id="groupViewAccounts" layoutX="12.0" layoutY="127.0">
          <children>
             <TableView fx:id="tableViewAccount" editable="true" prefHeight="238.0" prefWidth="575.0">

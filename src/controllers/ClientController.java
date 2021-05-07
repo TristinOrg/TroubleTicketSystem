@@ -112,8 +112,8 @@ public class ClientController implements Initializable  {
     //btnSubmit click event
     public void OnBtnSubmitClicked() {
     	String desc = txtDesc.getText();
-		boolean isSuccess = model.SubmitNewProblem(ClientController.userid, desc);
-		System.out.println("IsSuccess "+isSuccess);
-		txtErrorMsg.setText(isSuccess?"Submit success":"Submit failed");
+		boolean isSucced = model.SubmitNewProblem(ClientController.userid, desc);
+		System.out.println("IsSuccess "+isSucced);
+		txtErrorMsg.setText(isSucced?"Submit succed":"Submit failed");
     }
 }

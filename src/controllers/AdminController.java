@@ -155,18 +155,18 @@ public class AdminController implements Initializable {
 		boolean isAdd 		= checkAccountIsAdd.isSelected();
 		boolean isDelete 	= checkAccountIsDelete.isSelected();
 		boolean isAdmin  	= checkAccountIsAdmin.isSelected();
-		boolean isSuccess 	= model.UpdateAccount(Integer.parseInt(id), userName, pwd, isAdd, isDelete, isAdmin);
-	    System.out.println("IsSuccess "+isSuccess);
-		txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
+		boolean isSucceed 	= model.UpdateAccount(Integer.parseInt(id), userName, pwd, isAdd, isDelete, isAdmin);
+	    System.out.println("IsSucced "+isSucceed);
+		txtErrorMsg.setText(isSucceed?"Update Succeed":"Update failed");
 	}
 	
 	public void OnBtnProblemUpdateClicked() {
 		String id 			= txtProblemID.getText();
 		String description 	= txtProblemDesc.getText();
-		boolean isAdd 		= checkAccountIsAdd.isSelected();
-		boolean isDelete 	= checkAccountIsDelete.isSelected();
-		boolean isSuccess 	= model.UpdateProblem(Integer.parseInt(id),ClientController.userid, description, isAdd, isDelete);
-	    txtErrorMsg.setText(isSuccess?"Update Success":"Update failed");
-	    System.out.println("IsSuccess "+isSuccess);
+		boolean isAdd 		= checkProblemIsAdd.isSelected();
+		boolean isDelete 	= checkProblemIsDelete.isSelected();
+		boolean isSucceed 	= model.UpdateProblem(Integer.parseInt(id),ClientController.userid, description, isAdd, isDelete);
+	    txtErrorMsg.setText(isSucceed?"Update Succeed":"Update failed");
+	    System.out.println("IsSucceed "+isSucceed);
 	}
 }
