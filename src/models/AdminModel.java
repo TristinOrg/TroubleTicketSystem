@@ -61,11 +61,11 @@ public class AdminModel extends DBConnect {
 			String sql = "";
 			if (isAdd) 
 			{
-				sql = "INSERT INTO t_wen_problems(ID,UserID,Description,Date)Values(null,?,?,?)";
+				sql = "INSERT INTO t_wen_users(ID,UserName,Password,IsAdmin)VALUES(null,?,?,?)";
 			}
 			else if(isDelete) 
 			{
-				sql = "DELETE FROM t_wen_users WHERE ID =?";
+				sql = "DELETE FROM t_wen_users WHERE ID =? or UserName=?";
 			}
 			else 
 			{
