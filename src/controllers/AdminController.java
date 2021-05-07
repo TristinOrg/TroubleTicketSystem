@@ -97,7 +97,7 @@ public class AdminController implements Initializable {
 	     	colAccountPassword.setCellValueFactory(new PropertyValueFactory<User, String>("password"));
 	     	colAccountIsAdmin.setCellValueFactory(new PropertyValueFactory<User, Boolean>("isAdmin"));
 	     	
-	     	tableViewAccount.getItems().addAll(userList);
+	     	tableViewAccount.getItems().setAll(userList);
 		}
 	}
 	
