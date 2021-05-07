@@ -18,40 +18,40 @@ public class User {
 	   isAdmin  = new SimpleBooleanProperty();
 	}
 	
-	public void SetId(int id) {
+	public void setId(int id) {
 		this.id.set(id);
 	}
 	
-	public void SetUserName(String userName)
+	public void setUserName(String userName)
 	{
 		this.userName.set(userName);
 	}
 	
 	
-	public void SetPassword(String password)
+	public void setPassword(String password)
 	{
 		this.password.set(password);
 	}
 	
-	public void SetIsAdmin(boolean isAdmin){
+	public void setIsAdmin(boolean isAdmin){
 		this.isAdmin.set(isAdmin);
 	}
 	
-	public int GetId() {
+	public int getId() {
 		return this.id.get();
 	}
 	
-	public String GetPassword()
+	public String getPassword()
 	{
 		return this.password.get();
 	}
 	
-	public String GetUserName()
+	public String getUserName()
 	{
 		return this.userName.get();
 	}
 	
-	public boolean GetIsAdmin() {
+	public boolean getIsAdmin() {
 		return this.isAdmin.get();
 	}
 }

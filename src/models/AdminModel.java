@@ -37,11 +37,11 @@ public class AdminModel extends DBConnect {
 			while(rs.next())
 			{
 				User user = new User();
-				user.SetId(rs.getInt("ID"));
-				user.SetUserName(rs.getString("UserName"));
-				user.SetPassword(rs.getString("Password"));
-				user.SetIsAdmin(rs.getBoolean("IsAdmin"));
-				System.out.println("ID: "+user.GetId()+" UserName: "+user.GetUserName()+" Password: "+user.GetPassword()+" IsAdmin: "+user.GetIsAdmin());
+				user.setId(rs.getInt("ID"));
+				user.setUserName(rs.getString("UserName"));
+				user.setPassword(rs.getString("Password"));
+				user.setIsAdmin(rs.getBoolean("IsAdmin"));
+				System.out.println("ID: "+user.getId()+" UserName: "+user.getUserName()+" Password: "+user.getPassword()+" IsAdmin: "+user.getIsAdmin());
 				userList.add(user);
 			}
 		} 
@@ -117,11 +117,11 @@ public class AdminModel extends DBConnect {
 			while(rs.next())
 			{
 				Problem problem = new Problem();
-				problem.SetId(rs.getInt("ID"));
-				problem.SetUserId(rs.getInt("UserID"));
-				problem.SetDesc(rs.getString("Description"));
-				problem.SetDate(rs.getString("Date"));
-				System.out.println("ID: "+problem.GetId()+" UserID: "+problem.GetUserId()+" Description: "+problem.GetDesc()+" Date: "+problem.GetDate());
+				problem.setId(rs.getInt("ID"));
+				problem.setUserId(rs.getInt("UserID"));
+				problem.setDesc(rs.getString("Description"));
+				problem.setDate(rs.getString("Date"));
+				System.out.println("ID: "+problem.getId()+" UserID: "+problem.getUserId()+" Description: "+problem.getDesc()+" Date: "+problem.getDate());
 				problemList.add(problem);
 			}
 		} 

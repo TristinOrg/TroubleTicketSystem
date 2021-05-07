@@ -17,35 +17,35 @@ public class Problem {
 		date 	= new SimpleStringProperty();
 	}
 	
-	public void SetId(int id) {
+	public void setId(int id) {
 		this.id.set(id);
 	}
 	
-	public void SetUserId(int userId) {
+	public void setUserId(int userId) {
 		this.userId.set(userId);
 	}
 	
-	public void SetDesc(String desc) {
+	public void setDesc(String desc) {
 		this.desc.set(desc);
 	}
 	
-	public void SetDate(String date) {
+	public void setDate(String date) {
 		this.date.set(date);
 	}
 	
-	public int GetId() {
+	public int getId() {
 		return this.id.get();
 	}
 	
-	public int GetUserId() {
+	public int getUserId() {
 		return this.userId.get();
 	}
 	
-	public String GetDesc() {
+	public String getDesc() {
 		return this.desc.get();
 	}
 	
-	public String GetDate() {
+	public String getDate() {
 		return this.date.get();
 	}
 }

@@ -58,7 +58,6 @@ public class LoginController {
 			try {
 				AnchorPane root;
 				if (model.isAdmin() && isValid) {
-					// If user is admin, inflate admin view
 
 					root = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/AdminView.fxml"));
 					Main.stage.setTitle("Admin View");
@@ -67,7 +66,7 @@ public class LoginController {
 					// If user is customer, inflate customer view
 
 					root = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/ClientView.fxml"));
-					// ***Set user ID acquired from db****
+	
 					int user_id = model.GetId();  
 					ClientController.setUserid(user_id);
 					Main.stage.setTitle("Client View");

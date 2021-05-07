@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import applications.Main;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -91,7 +92,7 @@ public class ClientController implements Initializable  {
      		System.out.println("The size of the problem list is 0");
      		return;
      	}
-     	tableList.getItems().addAll(problemList);
+     	tableList.getItems().setAll(problemList);
     }
     
     //btnLogout click event

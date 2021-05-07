@@ -117,7 +117,7 @@ public class AdminController implements Initializable {
 	     	colProblemDesc.setCellValueFactory(new PropertyValueFactory<Problem, String>("desc"));
 	     	colProblemDate.setCellValueFactory(new PropertyValueFactory<Problem, String>("date"));
 	     	
-	     	tableViewProblem.getItems().addAll(problemList);
+	     	tableViewProblem.getItems().setAll(problemList);
 		}
 	}
 	

@@ -22,7 +22,7 @@ public class LoginModel extends DBConnect {
 		{
 			return -1;	
 		}		
-		return user.GetId();
+		return user.getId();
 	}
 	
 	public boolean isAdmin()
@@ -30,7 +30,7 @@ public class LoginModel extends DBConnect {
 		if (user==null) {
 			return false;
 		}
-		return user.GetIsAdmin();
+		return user.getIsAdmin();
 	}
 
 		
@@ -41,8 +41,8 @@ public class LoginModel extends DBConnect {
                stmt.setString(2, password);
                ResultSet rs = stmt.executeQuery();
                 if(rs.next()) {        
-                	user.SetId(rs.getInt("ID"));
-                	user.SetIsAdmin(rs.getBoolean("IsAdmin"));
+                	user.setId(rs.getInt("ID"));
+                	user.setIsAdmin(rs.getBoolean("IsAdmin"));
                 	return true;
                	}
              }catch (SQLException e) {
